@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhumi Sharma — UI/UX Designer & Front-End Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1B2A;
+    --paper:#FAF9F6;
+    --panel:#F1EFFA;
+    --coral:#FF5A6E;
+    --mint:#1FAE7C;
+    --slate:#6E6C82;
+    --line:#E4E1F0;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    min-height:100vh;
+  }
+
+  /* ---------- SIDEBAR ---------- */
+  aside{
+    position:sticky;
+    top:0;
+    height:100vh;
+    padding:48px 36px;
+    border-right:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .brand-name{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.5rem;
+    letter-spacing:-0.02em;
+  }
+  .brand-role{
+    margin-top:6px;
+    font-size:0.82rem;
+    color:var(--slate);
+    line-height:1.5;
+  }
+  .status-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:18px;
+    padding:5px 10px;
+    background:var(--panel);
+    border-radius:20px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:0.02em;
+    color:var(--ink);
+  }
+  .status-dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--mint);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.35;}
+  }
+  nav{margin-top:46px;}
+  nav a{
+    display:block;
+    padding:9px 0;
+    font-size:0.88rem;
+    color:var(--slate);
+    border-left:2px solid transparent;
+    padding-left:14px;
+    margin-left:-14px;
+    transition:all .2s ease;
+  }
+  nav a:hover, nav a.active{
+    color:var(--ink);
+    border-left-color:var(--coral);
+  }
+  nav a .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;
+    color:var(--coral);
+    margin-right:8px;
+  }
+  .side-footer{font-size:0.75rem; color:var(--slate);}
+  .side-footer div{margin-bottom:6px;}
+  .side-footer a:hover{color:var(--coral);}
+
+  /* ---------- MAIN ---------- */
+  main{padding:64px 64px 40px 64px; max-width:920px;}
+  section{margin-bottom:110px; scroll-margin-top:40px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--coral);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.05;
+    letter-spacing:-0.03em;
+    max-width:11ch;
+  }
+  h1 span{color:var(--coral);}
+  .hero-sub{
+    margin-top:26px;
+    font-size:1.08rem;
+    color:var(--slate);
+    max-width:56ch;
+  }
+  .hero-cta{
+    margin-top:36px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    padding:12px 22px;
+    border-radius:8px;
+    font-size:0.88rem;
+    font-weight:500;
+    border:1px solid var(--ink);
+    transition:all .2s ease;
+  }
+  .btn-solid{background:var(--ink); color:var(--white);}
+  .btn-solid:hover{background:var(--coral); border-color:var(--coral);}
+  .btn-ghost:hover{background:var(--panel);}
+
+  h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.9rem;
+    letter-spacing:-0.02em;
+    margin-bottom:28px;
+  }
+  .about-text{max-width:66ch; font-size:1rem; color:#39374B;}
+  .about-text p{margin-bottom:16px;}
+
+  /* skills */
+  .skill-groups{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .skill-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+  }
+  .skill-card-title{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-bottom:14px;
+  }
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    padding:6px 12px;
+    background:var(--panel);
+    border-radius:6px;
+    font-size:0.82rem;
+    font-weight:500;
+  }
+
+  /* projects - figma frame style */
+  .project-list{display:flex; flex-direction:column; gap:20px;}
+  .frame{
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--white);
+    padding:26px;
+    position:relative;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .frame:hover{border-color:var(--coral); transform:translateY(-3px);}
+  .frame-label{
+    position:absolute;
+    top:-11px;
+    left:22px;
+    background:var(--paper);
+    padding:0 8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    color:var(--coral);
+  }
+  .frame-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .frame-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+  }
+  .frame-desc{
+    margin-top:8px;
+    color:var(--slate);
+    font-size:0.92rem;
+    max-width:60ch;
+  }
+  .frame-link{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.76rem;
+    color:var(--ink);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:7px 12px;
+    white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .frame-link:hover{border-color:var(--coral); color:var(--coral);}
+  .frame-tags{margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;}
+  .frame-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    color:var(--mint);
+    background:rgba(31,174,124,0.08);
+    padding:4px 9px;
+    border-radius:5px;
+  }
+
+  /* experience / education timeline */
+  .tl-item{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .tl-item:last-child{border-bottom:1px solid var(--line);}
+  .tl-date{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--slate);
+    padding-top:2px;
+  }
+  .tl-role{font-weight:600; font-size:1.02rem;}
+  .tl-org{color:var(--coral); font-size:0.88rem; margin-top:2px;}
+  .tl-desc{margin-top:10px; color:var(--slate); font-size:0.9rem; max-width:60ch;}
+
+  /* contact */
+  .contact-box{
+    background:var(--ink);
+    border-radius:20px;
+    padding:56px;
+    color:var(--paper);
+  }
+  .contact-box h2{color:var(--paper);}
+  .contact-box .hero-sub{color:#B5B3C6;}
+  .contact-grid{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .contact-pill{
+    padding:12px 20px;
+    border:1px solid #38364A;
+    border-radius:8px;
+    font-size:0.88rem;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:all .2s ease;
+  }
+  .contact-pill:hover{border-color:var(--coral); color:var(--coral);}
+
+  footer{
+    text-align:center;
+    padding:30px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--slate);
+  }
+
+  /* mobile */
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr;}
+    aside{
+      position:relative;
+      height:auto;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px;
+    }
+    nav{display:none;}
+    .side-footer{display:none;}
+    main{padding:40px 24px;}
+    .skill-groups{grid-template-columns:1fr;}
+    .tl-item{grid-template-columns:1fr;}
+    .contact-box{padding:32px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- SIDEBAR -->
+  <aside>
+    <div>
+      <div class="brand-name">Bhumi Sharma</div>
+      <div class="brand-role">UI/UX Designer &<br>Front-End Developer</div>
+      <div class="status-chip"><span class="status-dot"></span> Open to opportunities</div>
+      <nav>
+        <a href="#about"><span class="num">01</span>About</a>
+        <a href="#skills"><span class="num">02</span>Skills</a>
+        <a href="#work"><span class="num">03</span>Work</a>
+        <a href="#experience"><span class="num">04</span>Experience</a>
+        <a href="#education"><span class="num">05</span>Education</a>
+        <a href="#contact"><span class="num">06</span>Contact</a>
+      </nav>
+    </div>
+    <div class="side-footer">
+      <div><a href="mailto:bhumisharma1624@gmail.com">email me</a></div>
+      <div><a href="tel:+919599409677">+91 95994 09677</a></div>
+      <div><a href="https://github.com/bhumisharma1624" target="_blank">GitHub ↗</a></div>
+      <div><a href="https://www.linkedin.com/in/bhumi-sharma-16f" target="_blank">LinkedIn ↗</a></div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section id="home" style="margin-top:20px;">
+      <div class="eyebrow">// Portfolio 2026</div>
+      <h1>I design interfaces people <span>actually enjoy</span> using.</h1>
+      <p class="hero-sub">Computer Science Engineering student and front-end-literate UI/UX designer, blending Figma-first design thinking with hands-on HTML, CSS &amp; JavaScript — currently looking for a junior design or front-end role.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#work">View Work</a>
+        <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="eyebrow">01 / About</div>
+      <h2>A little about me</h2>
+      <div class="about-text">
+        <p>I'm a B.Tech Computer Science student (GGSIPU, 2026) with a growing focus on user-centered digital design. My work sits at the intersection of design and code — I prototype in Figma, then understand exactly how those screens get built in HTML, CSS and JavaScript.</p>
+        <p>I've completed a UI/UX design internship at CodSoft, an Internshala UI/UX certification, and a Deloitte Australia Cyber Job Simulation via Forage. Alongside design, I work with Power BI for data visualization and I'm building my foundations in Machine Learning and AI.</p>
+        <p>I'm most energized by taking a messy problem — a cluttered checkout flow, an unclear dashboard — and simplifying it into something people don't have to think twice about.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="eyebrow">02 / Skills</div>
+      <h2>What I work with</h2>
+      <div class="skill-groups">
+        <div class="skill-card">
+          <div class="skill-card-title">Design</div>
+          <div class="tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Wireframing</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">UI Design</span>
+            <span class="tag">UX Research</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Development</div>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Data & Analysis</div>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">MS Excel</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Data Science</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">AI Tools</div>
+          <div class="tags">
+            <span class="tag">Claude AI</span>
+            <span class="tag">Gemini Pro</span>
+            <span class="tag">Copilot AI</span>
+            <span class="tag">Perplexity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="eyebrow">03 / Selected Work</div>
+      <h2>Projects</h2>
+      <div class="project-list">
+
+        <div class="frame">
+          <span class="frame-label">Frame / Nykaa-Redesign-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Nykaa App Redesign</div>
+              <p class="frame-desc">Redesigned the Nykaa mobile shopping experience with cleaner navigation and a refined product discovery flow.</p>
+            </div>
+            <a class="frame-link" href="https://www.figma.com/design/E8akYibyXqgddfeX1jQakf" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">FIGMA</span><span class="frame-tag">MOBILE UX</span><span class="frame-tag">E-COMMERCE</span></div>
+        </div>
+
+        <div class="frame">
+          <span class="frame-label">Frame / Skincare-Concept-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Korean Skincare Website</div>
+              <p class="frame-desc">Designed a soft, elegant e-commerce website concept for a Korean skincare brand.</p>
+            </div>
+            <a class="frame-link" href="https://www.figma.com/design/UzXUV9oqeUKRhivKxkJykG/Korean-Skincare" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">FIGMA</span><span class="frame-tag">WEB UX</span><span class="frame-tag">BRANDING</span></div>
+        </div>
+
+        <div class="frame">
+          <span class="frame-label">Frame / Sales-Dashboard-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Online Sales Dashboard</div>
+              <p class="frame-desc">Designed an interactive dashboard to track and analyze online sales data with KPIs, filters and visual insights.</p>
+            </div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/sales-data-dashboard" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">POWER BI</span><span class="frame-tag">DATA VIZ</span></div>
+        </div>
+
+        <div class="frame">
+          <span class="frame-label">Frame / Amazon-Clone-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Amazon Clone — Desktop Preview</div>
+              <p class="frame-desc">Cloned homepage build featuring the navigation bar, hero image slider, and product grid.</p>
+            </div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/Amazon-Clone" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">HTML</span><span class="frame-tag">CSS</span></div>
+        </div>
+
+        <div class="frame">
+          <span class="frame-label">Frame / Tic-Tac-Toe-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Tic-Tac-Toe Game</div>
+              <p class="frame-desc">Interactive game board with an active match view, clean turn indicators, and smooth hover effects.</p>
+            </div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/Tic-Tac-Toe-Game" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">HTML</span><span class="frame-tag">CSS</span><span class="frame-tag">JAVASCRIPT</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="eyebrow">04 / Experience</div>
+      <h2>Where I've worked</h2>
+      <div class="tl-item">
+        <div class="tl-date">2025 — 1 Month</div>
+        <div>
+          <div class="tl-role">UI/UX Virtual Intern</div>
+          <div class="tl-org">CodSoft</div>
+          <div class="tl-desc">Completed hands-on UI/UX design tasks, building wireframes and prototypes in Figma. Documented and published all task deliverables on GitHub.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="eyebrow">05 / Education & Certifications</div>
+      <h2>Learning path</h2>
+      <div class="tl-item">
+        <div class="tl-date">2022 — 2026</div>
+        <div>
+          <div class="tl-role">B.Tech, Computer Science & Engineering</div>
+          <div class="tl-org">Trinity Institute of Innovation in Professional Studies (GGSIPU), Greater Noida</div>
+          <div class="tl-desc">CGPA: 8.25</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Certification</div>
+        <div>
+          <div class="tl-role">UI/UX Design Course</div>
+          <div class="tl-org">Internshala</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Certification</div>
+        <div>
+          <div class="tl-role">Cyber Job Simulation — Deloitte Australia</div>
+          <div class="tl-org">Forage</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-box">
+        <div class="eyebrow" style="color:var(--coral);">06 / Contact</div>
+        <h2>Let's build something.</h2>
+        <p class="hero-sub">I'm looking for junior UI/UX design or front-end developer roles. Reach out — I reply fast.</p>
+        <div class="contact-grid">
+          <a class="contact-pill" href="mailto:bhumisharma1624@gmail.com">✉ bhumisharma1624@gmail.com</a>
+          <a class="contact-pill" href="tel:+919599409677">☎ +91 95994 09677</a>
+          <a class="contact-pill" href="https://github.com/bhumisharma1624" target="_blank">GitHub ↗</a>
+          <a class="contact-pill" href="https://www.linkedin.com/in/bhumi-sharma-16f" target="_blank">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>Designed & built by Bhumi Sharma — 2026</footer>
+
+<script>
+  const links = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('main section[id]');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const active = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if(active) active.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-40% 0px -50% 0px'});
+  sections.forEach(s=>obs.observe(s));
+</script>
+
+</body>
+</html>
