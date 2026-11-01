@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff7f1">
+<meta name="description" content="Bhumi Sharma — UI/UX designer and front-end developer. Explore her design and coding projects.">
+<title>Bhumi Sharma — UI/UX Designer & Front-End Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- SIDEBAR -->
+  <aside>
+    <div>
+      <div class="brand-name">Bhumi Sharma</div>
+      <div class="brand-role">UI/UX Designer &<br>Front-End Developer</div>
+      <div class="status-chip"><span class="status-dot"></span> Open to opportunities</div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span><span class="menu-lines" aria-hidden="true"></span>
+      </button>
+      <nav id="primary-nav" aria-label="Main navigation">
+        <a href="#home"><span class="num">00</span>Home</a>
+        <a href="#about"><span class="num">01</span>About</a>
+        <a href="#skills"><span class="num">02</span>Skills</a>
+        <a href="#work"><span class="num">03</span>Work</a>
+        <a href="#experience"><span class="num">04</span>Experience</a>
+        <a href="#education"><span class="num">05</span>Education</a>
+        <a href="#contact"><span class="num">06</span>Contact</a>
+      </nav>
+    </div>
+    <div class="side-footer">
+      <div><a href="mailto:bhumisharma1624@gmail.com">email me</a></div>
+      <div><a href="tel:+919599409677">+91 95994 09677</a></div>
+      <div><a href="https://github.com/bhumisharma1624" target="_blank">GitHub ↗</a></div>
+      <div><a href="https://www.linkedin.com/in/bhumi-sharma-16f" target="_blank">LinkedIn ↗</a></div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section id="home">
+      <div class="eyebrow">// Portfolio 2026</div>
+      <h1>I design interfaces people <span>actually enjoy</span> using.</h1>
+      <figure class="hero-portrait">
+        <img src="assets/bhumi-sharma.jpg" alt="Bhumi Sharma" width="400" height="205" fetchpriority="high">
+        <figcaption><span>BHUMI SHARMA</span><span>DESIGNER · DEVELOPER</span></figcaption>
+      </figure>
+      <p class="hero-sub">Computer Science Engineering student and front-end-literate UI/UX designer, blending Figma-first design thinking with hands-on HTML, CSS &amp; JavaScript — currently looking for a junior design or front-end role.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#work">View Work</a>
+        <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="eyebrow">01 / About</div>
+      <h2>A little about me</h2>
+      <div class="about-text">
+        <p>I'm a B.Tech Computer Science student (GGSIPU, 2026) with a growing focus on user-centered digital design. My work sits at the intersection of design and code — I prototype in Figma, then understand exactly how those screens get built in HTML, CSS and JavaScript.</p>
+        <p>I've completed a UI/UX design internship at CodSoft, an Internshala UI/UX certification, and a Deloitte Australia Cyber Job Simulation via Forage. Alongside design, I work with Power BI for data visualization and I'm building my foundations in Machine Learning and AI.</p>
+        <p>I'm most energized by taking a messy problem — a cluttered checkout flow, an unclear dashboard — and simplifying it into something people don't have to think twice about.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="eyebrow">02 / Skills</div>
+      <h2>What I work with</h2>
+      <div class="skill-groups">
+        <div class="skill-card">
+          <div class="skill-card-title">Design</div>
+          <div class="tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Wireframing</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">UI Design</span>
+            <span class="tag">UX Research</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Development</div>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Data & Analysis</div>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">MS Excel</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Data Science</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">AI Tools</div>
+          <div class="tags">
+            <span class="tag">Claude AI</span>
+            <span class="tag">Gemini Pro</span>
+            <span class="tag">Copilot AI</span>
+            <span class="tag">Perplexity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="eyebrow">03 / Selected Work</div>
+      <h2>Projects</h2>
+      <div class="project-toolbar">
+        <label class="project-search"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Search projects" autocomplete="off"></label>
+        <div class="project-filters" id="project-filters" aria-label="Filter projects"></div>
+      </div>
+      <p class="results-count" id="results-count" aria-live="polite"></p>
+      <div class="project-list" id="project-list">
+
+        <div class="frame" data-category="UI/UX">
+          <span class="frame-label">Frame / Nykaa-Redesign-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Nykaa App Redesign</div>
+              <p class="frame-desc">Redesigned the Nykaa mobile shopping experience with cleaner navigation and a refined product discovery flow.</p>
+            </div>
+            <a class="frame-link" href="https://www.figma.com/design/E8akYibyXqgddfeX1jQakf" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">FIGMA</span><span class="frame-tag">MOBILE UX</span><span class="frame-tag">E-COMMERCE</span></div>
+        </div>
+
+        <div class="frame" data-category="UI/UX">
+          <span class="frame-label">Frame / Skincare-Concept-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Korean Skincare Website</div>
+              <p class="frame-desc">Designed a soft, elegant e-commerce website concept for a Korean skincare brand.</p>
+            </div>
+            <a class="frame-link" href="https://www.figma.com/design/UzXUV9oqeUKRhivKxkJykG/Korean-Skincare" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">FIGMA</span><span class="frame-tag">WEB UX</span><span class="frame-tag">BRANDING</span></div>
+        </div>
+
+        <div class="frame" data-category="Data">
+          <span class="frame-label">Frame / Sales-Dashboard-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Online Sales Dashboard</div>
+              <p class="frame-desc">Designed an interactive dashboard to track and analyze online sales data with KPIs, filters and visual insights.</p>
+            </div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/sales-data-dashboard" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">POWER BI</span><span class="frame-tag">DATA VIZ</span></div>
+        </div>
+
+        <div class="frame" data-category="Frontend">
+          <span class="frame-label">Frame / Amazon-Clone-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Amazon Clone — Desktop Preview</div>
+              <p class="frame-desc">Cloned homepage build featuring the navigation bar, hero image slider, and product grid.</p>
+            </div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/Amazon-Clone" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">HTML</span><span class="frame-tag">CSS</span></div>
+        </div>
+
+        <div class="frame" data-category="JavaScript">
+          <span class="frame-label">Frame / Tic-Tac-Toe-01</span>
+          <div class="frame-top">
+            <div>
+              <div class="frame-title">Tic-Tac-Toe Game</div>
+              <p class="frame-desc">Interactive game board with an active match view, clean turn indicators, and smooth hover effects.</p>
+            </div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/Tic-Tac-Toe-Game" target="_blank">View Project ↗</a>
+          </div>
+          <div class="frame-tags"><span class="frame-tag">HTML</span><span class="frame-tag">CSS</span><span class="frame-tag">JAVASCRIPT</span></div>
+        </div>
+
+        <div class="frame" data-category="JavaScript">
+          <span class="frame-label">Frame / Currency-Converter-01</span>
+          <div class="frame-top"><div><div class="frame-title">Ratewise Currency Converter</div>
+            <p class="frame-desc">A responsive currency converter with live reference rates, a currency swap, and clear loading and error states.</p></div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/Currency-Converter" target="_blank" rel="noopener noreferrer">View Project ↗</a></div>
+          <div class="frame-tags"><span class="frame-tag">JAVASCRIPT</span><span class="frame-tag">REST API</span><span class="frame-tag">RESPONSIVE UI</span></div>
+        </div>
+
+        <div class="frame" data-category="JavaScript">
+          <span class="frame-label">Frame / Cybersecurity-Roadmap-01</span>
+          <div class="frame-top"><div><div class="frame-title">Cybersecurity Learning Roadmap</div>
+            <p class="frame-desc">An interactive, browser-based roadmap for organizing beginner cybersecurity and ethical-hacking study.</p></div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/Cyber-Security-And-Ethical-Hacking-Roadmap-" target="_blank" rel="noopener noreferrer">View Project ↗</a></div>
+          <div class="frame-tags"><span class="frame-tag">JAVASCRIPT</span><span class="frame-tag">EDTECH</span></div>
+        </div>
+
+        <div class="frame" data-category="Frontend">
+          <span class="frame-label">Frame / EcoDesk-01</span>
+          <div class="frame-top"><div><div class="frame-title">EcoDesk Virtual Study Room</div>
+            <p class="frame-desc">A calm virtual study space designed to support focus and a lightweight sense of connection.</p></div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/EcoDesk-Virtual-Study-Room-" target="_blank" rel="noopener noreferrer">View Project ↗</a></div>
+          <div class="frame-tags"><span class="frame-tag">TYPESCRIPT</span><span class="frame-tag">PRODUCT DESIGN</span><span class="frame-tag">FOCUS</span></div>
+        </div>
+
+        <div class="frame" data-category="UI/UX">
+          <span class="frame-label">Frame / CodSoft-UI-UX-01</span>
+          <div class="frame-top"><div><div class="frame-title">CodSoft UI/UX Design Tasks</div>
+            <p class="frame-desc">Selected design exercises and deliverables from a virtual UI/UX internship, collected in a public repository.</p></div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/Codsoft-Task" target="_blank" rel="noopener noreferrer">View Design Work ↗</a></div>
+          <div class="frame-tags"><span class="frame-tag">FIGMA</span><span class="frame-tag">UI/UX</span><span class="frame-tag">INTERNSHIP</span></div>
+          <div class="frame-secondary-link"><a href="https://www.linkedin.com/in/bhumi-sharma-16f" target="_blank" rel="noopener noreferrer">Find me on LinkedIn ↗</a></div>
+        </div>
+
+        <div class="frame" data-category="Frontend">
+          <span class="frame-label">Frame / CyberQuest-01</span>
+          <div class="frame-top"><div><div class="frame-title">CyberQuest Learning Game</div>
+            <p class="frame-desc">A playful, safety-first cybersecurity learning site with five interactive puzzle, memory, detective, and timed game modes.</p></div>
+            <a class="frame-link" href="../SafetyGame/index.html">Play the Game ↗</a></div>
+          <div class="frame-tags"><span class="frame-tag">HTML</span><span class="frame-tag">CSS</span><span class="frame-tag">JAVASCRIPT</span></div>
+        </div>
+
+        <div class="frame" data-category="Python">
+          <span class="frame-label">Frame / Weather-App-01</span>
+          <div class="frame-top"><div><div class="frame-title">Weather Forecast App</div>
+            <p class="frame-desc">A Python command-line weather project for current conditions and forecasts, built around an external weather API.</p></div>
+            <a class="frame-link" href="../WeatherApp.py">View Python File ↗</a></div>
+          <div class="frame-tags"><span class="frame-tag">PYTHON</span><span class="frame-tag">REST API</span></div>
+        </div>
+
+        <div class="frame" data-category="Frontend">
+          <span class="frame-label">Frame / Portfolio-Website-01</span>
+          <div class="frame-top"><div><div class="frame-title">Portfolio Website</div>
+            <p class="frame-desc">An earlier portfolio project and a public snapshot of my continued design and front-end learning.</p></div>
+            <a class="frame-link" href="https://github.com/bhumisharma1624/My-Portfolio" target="_blank" rel="noopener noreferrer">View Project ↗</a></div>
+          <div class="frame-tags"><span class="frame-tag">HTML</span><span class="frame-tag">PORTFOLIO</span></div>
+        </div>
+
+      </div>
+      <div class="empty-state" id="empty-state" hidden><h3>No matching projects</h3><p>Try a different search or category.</p></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="eyebrow">04 / Experience</div>
+      <h2>Where I've worked</h2>
+      <div class="tl-item">
+        <div class="tl-date">2025 — 1 Month</div>
+        <div>
+          <div class="tl-role">UI/UX Virtual Intern</div>
+          <div class="tl-org">CodSoft</div>
+          <div class="tl-desc">Completed hands-on UI/UX design tasks, building wireframes and prototypes in Figma. Documented and published all task deliverables on GitHub.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="eyebrow">05 / Education & Certifications</div>
+      <h2>Learning path</h2>
+      <div class="tl-item">
+        <div class="tl-date">2022 — 2026</div>
+        <div>
+          <div class="tl-role">B.Tech, Computer Science & Engineering</div>
+          <div class="tl-org">Trinity Institute of Innovation in Professional Studies (GGSIPU), Greater Noida</div>
+          <div class="tl-desc">CGPA: 8.25</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Certification</div>
+        <div>
+          <div class="tl-role">UI/UX Design Course</div>
+          <div class="tl-org">Internshala</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Certification</div>
+        <div>
+          <div class="tl-role">Cyber Job Simulation — Deloitte Australia</div>
+          <div class="tl-org">Forage</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-box">
+        <div class="eyebrow">06 / Contact</div>
+        <h2>Let's build something.</h2>
+        <p class="hero-sub">I'm looking for junior UI/UX design or front-end developer roles. Reach out — I reply fast.</p>
+        <div class="contact-grid">
+          <a class="contact-pill" href="mailto:bhumisharma1624@gmail.com">✉ bhumisharma1624@gmail.com</a>
+          <a class="contact-pill" href="tel:+919599409677">☎ +91 95994 09677</a>
+          <a class="contact-pill" href="https://github.com/bhumisharma1624" target="_blank">GitHub ↗</a>
+          <a class="contact-pill" href="https://www.linkedin.com/in/bhumi-sharma-16f" target="_blank">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>Designed & built by Bhumi Sharma — 2026</footer>
+</body>
+</html>
